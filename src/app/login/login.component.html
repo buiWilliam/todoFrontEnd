@@ -1,0 +1,54 @@
+<h1>Login</h1>
+<div class="container">
+     <div class="alert alert-warning" *ngIf=invalidLogin>{{errorMessage}}</div>
+    <!--<div>
+         <input type="text" name="username" [(ngModel)]="username">
+         <input type="password" name="password" [(ngModel)]="password">
+        &nbsp;
+        <button (click)=handleJWTAuthLogin() class="btn btn-success">Login</button>
+    </div> -->
+    
+    <!-- <form (ngSubmit)="!login.invalid && handleJWTAuthLogin()" #login="ngForm">
+        <fieldset class="form-group">
+            <label>User Name :</label>
+            <input type="text" class="form-control" required="required" name="username" [(ngModel)]="username">
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Password :</label>
+            <input type="password" class="form-control" required="required" name="password" [(ngModel)]="password">
+        </fieldset>
+        <button class="btn btn-success">Login</button>    
+    </form> -->
+
+    <!-- <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                <input type="text" pInputText placeholder="Username" [(ngModel)]=username>         
+            </div>
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
+                <input type="text" pInputText placeholder="Password" [(ngModel)]=password>         
+            </div>
+        </div>
+    </div> -->
+
+    <form (ngSubmit)="!login.invalid && handleJWTAuthLogin()" #login="ngForm">
+        <fieldset class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-user" style="line-height: 1.25;"></i></span>
+                <input type="text" name="username"pInputText placeholder="Username" [(ngModel)]=username>         
+            </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
+                <input type="password" name=password pPassword [(ngModel)]=password *ngIf=!visiblePassword>
+                <input type="text" name=password pPassword [(ngModel)]=password *ngIf=visiblePassword>
+                <span class="ui-inputgroup-addon"><p-checkbox checkboxIcon="pi pi-eye" [(ngModel)]=visiblePassword name="checkbox" binary=true></p-checkbox></span>
+            </div>
+        </fieldset>
+        <p-button label="Login" styleClass="ui-button-success"></p-button>
+    </form>
+
+</div>
