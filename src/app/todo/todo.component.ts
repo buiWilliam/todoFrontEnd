@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
     this.username = this.basicAuth.getUser()
     if(this.id!=-1)
     this.todoService.retrieveTodo(this.username,this.id).subscribe(response=>{
-      this.todo = response;
+      this.todo = response
     })
   }
 
@@ -36,5 +36,13 @@ export class TodoComponent implements OnInit {
       response => this.router.navigate(["listTodos"])
     )
   }
+
+  deleteTodo(id){
+    this.todoService.deleteTodo(this.username,id).subscribe(
+      response=>{
+        this.router.navigate(["listTodos"])
+      }
+    )
+}
 
 }

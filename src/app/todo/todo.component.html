@@ -9,11 +9,11 @@
         </fieldset>
         <fieldset class="form-group">
             <label>Due Date:</label>
-            <input type="date" #dueDate="ngModel"class="form-control" required="required" name="dueDate" [ngModel]="todo.dueDate|date:'yyyy-MM-dd'" (ngModelChange)="todo.dueDate = $event">
+            <input type="date" #dueDate="ngModel"class="form-control" required="required" name="dueDate" [ngModel]="todo.dueDate|date:'yyyy-MM-dd':'+0000'" (ngModelChange)="todo.dueDate = $event">
             <p-message severity="error" text="Field is required" *ngIf="dueDate.invalid && todoForm.dirty" ></p-message>
         </fieldset>
-
-        <button class="btn btn-success">Save</button>    
+        <button class="btn btn-success">Save</button>&nbsp;
+        <button class="btn btn-danger" (click)="deleteTodo(id)" *ngIf="id!=-1">Delete</button>
     </form>
 </div>
 

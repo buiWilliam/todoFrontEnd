@@ -23,6 +23,8 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {PasswordModule} from 'primeng/password';
 import {FullCalendarModule} from 'primeng/fullcalendar';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+import { NewUserComponent } from './new-user/new-user.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {FullCalendarModule} from 'primeng/fullcalendar';
     MenuComponent,
     FooterComponent,
     LogoutComponent,
-    TodoComponent
+    TodoComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import {FullCalendarModule} from 'primeng/fullcalendar';
     MessagesModule,
     MessageModule,
     PasswordModule,
-    FullCalendarModule
+    FullCalendarModule,
+    ScrollPanelModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:HttpIntercepterBasicAuthService,multi:true}

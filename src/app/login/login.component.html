@@ -43,8 +43,8 @@
         <fieldset class="form-group">
             <div class="ui-inputgroup">
                 <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
-                <input type="password" name=password pPassword [(ngModel)]=password *ngIf=!visiblePassword>
-                <input type="text" name=password pPassword [(ngModel)]=password *ngIf=visiblePassword>
+                <input type="password" name=password  [(ngModel)]=password *ngIf=!visiblePassword >
+                <input type="text" name=password  [(ngModel)]=password *ngIf=visiblePassword >
                 <span class="ui-inputgroup-addon"><p-checkbox checkboxIcon="pi pi-eye" [(ngModel)]=visiblePassword name="checkbox" binary=true></p-checkbox></span>
             </div>
         </fieldset>
